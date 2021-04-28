@@ -1,0 +1,3 @@
+[submodule "DragonPlume.Web"]
+	path = DragonPlume.Web
+	url = https://github.com/iLogical/DragonPlume-Web.git
