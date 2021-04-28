@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  website:
+    container_name: dragonplume-website
+    build:
+      context: ./DragonPlume.Web
+      dockerfile: ./Dockerfile
+    volumes:
+      - 'website-data:/app'
+      - '/app/node_modules'
+    ports:
+      - '4201:4200'
+  api:
+    container_name: dragonplume-services
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - 'services-data:/app'
+    ports:
+      - '80:443'
+volumes:
+    website-data:
+    services-data:
